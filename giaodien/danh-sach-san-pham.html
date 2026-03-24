@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><?= $title ?? 'Admin Dashboard' ?></title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Dashboard</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý User</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý Book</b></a>
+            </li>
+
+           
+
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-3 mb-3">Danh sách sách</h1>
+
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>IMG COVER</th>
+                    <th>TITLE</th>
+                    <th>AUTHOR</th>
+                    <th>CATEGORY NAME</th>
+                    <th>PUBLISHED YEAR</th>
+                    <th>CREATED AT</th>
+                    <th>UPDATED AT</th>
+                    <th>ACTION</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <img src="" width="100px">
+                    </td>
+                    <td>Sách 1</td>
+                    <td>Tác giả 1</td>
+                    <td>Danh mục 1</td>
+                    <td>Ngay xuat ban</td>
+                    <td>Ngày tạo</td>
+                    <td>Ngày cập nhật</td>
+                    <td>
+                        <a href=""
+                            class="btn btn-info">Xem</a>
+        
+                        <a href=""
+                            class="btn btn-warning ms-1 me-1 mb-1 mt-1">Sửa</a>
+        
+                        <a href=""
+                            onclick="return confirm('Có chắc xóa không?')"
+                            class="btn btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

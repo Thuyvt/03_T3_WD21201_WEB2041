@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><?= $title ?? 'Admin Dashboard' ?></title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Dashboard</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý User</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý Book</b></a>
+            </li>
+
+           
+
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="mt-3 mb-3">Danh sách sách</h1>
+
+        <div class="row">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="mb-3 mt-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                </div>
+            
+                <div class="mb-3 mt-3">
+                    <label for="category_id" class="form-label">Category:</label>
+            
+                    <select class="form-control" id="category_id" name="category_id">
+                            <option value="1">Danh mục 1</option>
+                    </select>
+            
+                </div>
+            
+                <div class="mb-3 mt-3">
+                    <label for="author" class="form-label">Author:</label>
+                    <input type="text" class="form-control" id="author" name="author">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="published_year" class="form-label">Published Year:</label>
+                    <input type="number" class="form-control" id="published_year" name="published_year">
+                </div>
+                <div class="mb-3">
+                    <label for="img_cover" class="form-label">Img Cover:</label>
+                    <input type="file" class="form-control" id="img_cover" name="img_cover">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
+            
+                <a href="#" class="btn btn-danger">Quay lại danh sách</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
