@@ -16,21 +16,47 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
+    <!-- <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link text-uppercase" href="<?= BASE_URL ?>"><b>Home</b></a>
             </li>
         </ul>
-    </nav>
-
+    </nav> -->
+    <nav class="navbar navbar-expand-sm bg-light shadow">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="../assets/uploads/logo.png" alt="Logo" width="50" height="50">
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Danh mục 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Danh mục 2</a>
+                    </li>
+                </ul>
+            </div>
+         
+          <!-- Menu -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="" class="nav-link">Xin chào thuyvt66</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link">Đăng xuất</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     <div class="container">
         <h1 class="mt-3 mb-3"><?= $title ?? 'Home' ?></h1>
 
         <div class="row">
             <?php
             if (isset($view)) {
-                require_once PATH_VIEW . $view . '.php';
+                require_once PATH_VIEW_CLIENT . $view . '.php';
             }
             ?>
         </div>

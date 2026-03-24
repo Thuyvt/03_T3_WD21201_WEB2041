@@ -1,7 +1,7 @@
 <?php
 
 define('BASE_URL',          'http://03_t3_wd21201_web2041.test/');
-define('BASE_URL_AMIN',      'http://03_t3_wd21201_web2041.test/?mode=admin');
+define('BASE_URL_ADMIN',      'http://03_t3_wd21201_web2041.test/?mode=admin');
 
 define('PATH_ROOT',         __DIR__ . '/../');
 
@@ -25,7 +25,7 @@ define('DB_HOST',     'localhost');
 define('DB_PORT',     '3306');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME',     '');
+define('DB_NAME',     'thuyvtph12345_wd21201');
 define('DB_OPTIONS', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
