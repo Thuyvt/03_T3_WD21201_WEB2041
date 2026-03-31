@@ -33,23 +33,25 @@
 <h3 class="mt-3">Sản phẩm mới giảm giá</h3>
  <!-- Khu vực sản phẩm -->
 <div class="row">
+   <?php foreach($data as $pro):?>
     <!-- Box sản phẩm -->
     <div class="col-3">
         <div class="border rounded overflow-hidden mb-4">
             <div class="bg-light d-flex justify-content-center align-items-center" style="height: 400px;">
-                <img src="../assets/uploads/products/san-pham_ao-blazer-01.webp" alt="" class="mw-100 mh-100">
+                <img src="<?= BASE_ASSETS_UPLOADS_PRODUCTS . $pro['image_url']?>" alt="" class="mw-100 mh-100">
             </div>
             <!-- Hiển thị text và button -->
             <div class="p-2">
-            <h5>Tên sản phẩm</h5>
+            <h5><?= $pro['name'] ?></h5>
             <div class="d-flex justify-content-between">
-                <span class="fw-bold">100.000</span>
+                <span class="fw-bold"><?= $pro['price'] ?></span>
                 <span class="text-danger text-decoration-line-through">200.000</span>
             </div>
             <button class="btn btn-danger rounded-pill w-100 btn-sm">Mua ngay</button>
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
     <!-- Hết box sản phẩm -->
 </div>
 <!-- Hết khu vực sản phẩm -->

@@ -12,7 +12,6 @@ class HomeController
     {   
         $view = 'home';
         $data = $this->productModel->getTop4Lastest();
-        debug($data);
         require_once PATH_VIEW_MAIN_CLIENT;
     }
 }

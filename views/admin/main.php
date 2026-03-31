@@ -19,8 +19,18 @@
     <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-uppercase" href="<?= BASE_URL ?>"><b>Home</b></a>
+                <a class="nav-link text-uppercase" href="#"><b>Dashboard</b></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý Danh mục</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="<?= BASE_URL_ADMIN . '&action=product-list' ?>"><b>Quản lý Sản phẩm</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý Người dùng</b></a>
+            </li>
+
         </ul>
     </nav>
 
@@ -30,7 +40,7 @@
         <div class="row">
             <?php
             if (isset($view)) {
-                require_once PATH_VIEW . $view . '.php';
+                require_once PATH_VIEW_ADMIN . $view . '.php';
             }
             ?>
         </div>
