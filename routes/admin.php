@@ -12,4 +12,5 @@ match ($action) {
     'product-show' => (new ProductController)->show(),// Hiển thị trang chi tiết
     'product-delete' => (new ProductController)->delete(), // Xóa theo id
     'product-store' => (new ProductController)->store(), // Lưu dữ liệu
+    'product-update' => (new ProductController)->update(), // Cập nhật dữ liệu
 };

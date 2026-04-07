@@ -65,4 +65,27 @@ class ProductModel extends BaseModel {
         // Lưu ảnh phụ
     }
 
+    // Cập nhật dữ liệu
+    public function update($data, $id) {
+        $sql = "UPDATE `products` SET `category_id` = ?, `name` = ?, `description` = ?, `price` = ?, `quantity` = ?
+         WHERE `products`.`id` = ?;";
+          $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$data['category_id'], $data['name'],$data['description']
+        ,$data['price'],$data['quantity'], $id]);
+
+        // THAY ĐỔI ẢNH
+        if ($data['img_cover'] != null) {
+            // Xóa ảnh cũ
+            $sql = "DELETE FROM `product_images` WHERE product_id = ?";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$id]);
+
+            // Thêm ảnh mới
+            $sql = "INSERT INTO `product_images` (`id`, `product_id`, `image_url`, `is_main`)
+             VALUES (NULL, ?, ?, ?);";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$this->pdo->lastInsertId(), $data['img_cover'], '1']);
+        }
+    }
+
 }

@@ -36,6 +36,6 @@
     
         <button type="submit" class="btn btn-primary">Submit</button>
     
-        <a href="#" class="btn btn-danger">Quay lại danh sách</a>
+        <a href="<?= BASE_URL_ADMIN . '&action=product-list'?>" class="btn btn-danger">Quay lại danh sách</a>
     </form>
 </div>
