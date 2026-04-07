@@ -1,9 +1,11 @@
 <?php
     class ProductController {
         private $productModel;
+        private $categoryModel;
 
         public function __construct() {
             $this->productModel = new ProductModel();
+            $this->categoryModel = new CategoryModel();
         }
 
         // Hiển thị trang danh sách
@@ -15,7 +17,34 @@
         }
 
         // Hiển thị trang tạo mới
-        public function create() {}
+        public function create() {
+            $view = 'product/create';
+            $title = 'Tạo mới sản phẩm';
+            $list_cat = $this->categoryModel->getAll();
+            require_once PATH_VIEW_MAIN_ADMIN;
+        }
+
+        // Lưu dữ liệu vào csld
+        public function store(){
+            try {
+                if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+                    throw new Exception("Phương thức yêu cầu không hợp lệ");
+                }
+
+                $data = $_POST + $_FILES;
+                // Xử lý ảnh
+                if($data['img_cover']['size'] >0) {
+                    $data['img_cover'] = upload_file('products', $data['img_cover']);
+                } else {
+                    $data['img_cover'] == null;
+                }
+                // thêm dữ liệu vào csld
+                $this->productModel->insert($data);
+
+                } catch(Exception $ex) {
+                    throw new Exception("Có lỗi xảy ra:" . $ex->getmessage());
+            }
+        }
 
         // Hiển thị trang chi tiết
         public function show(){
@@ -61,8 +90,7 @@
 
             } catch (Exception $ex){
                 throw new Exception("Có lỗi trong quá trình xóa" . $ex->getmessage());
-            }
-          
+            }          
         }
     }
 ?>

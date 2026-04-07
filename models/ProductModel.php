@@ -47,4 +47,22 @@ class ProductModel extends BaseModel {
         return $stmt->fetch();
     }
 
+    // Lưu dữ liệu và csdl
+    public function insert($data) {
+        $sql = "INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `quantity`, `created_at`) 
+        VALUES (NULL, ?, ? , ?, ? ,? ,?);";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$data['category_id'], $data['name'],$data['description']
+        ,$data['price'],$data['quantity'],$data['created_at']]);
+        
+        // Lưu ảnh đại diện nếu có 
+        if ($data['img_cover'] != null) {
+            $sql = "INSERT INTO `product_images` (`id`, `product_id`, `image_url`, `is_main`)
+             VALUES (NULL, ?, ?, ?);";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$this->pdo->lastInsertId(), $data['img_cover'], '1']);
+        }
+        // Lưu ảnh phụ
+    }
+
 }
